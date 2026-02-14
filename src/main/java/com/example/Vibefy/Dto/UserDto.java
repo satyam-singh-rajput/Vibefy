@@ -7,13 +7,17 @@ public class UserDto {
     private String email;
     private String username;
     private String password;
+
+    // Required by Jackson for JSON -> UserDto (e.g. register request body)
+    public UserDto() {
+    }
+
     public UserDto(User user) {
         this.id = user.getId();
         this.email = user.getEmail();
         this.username = user.getUsername();
         this.password = user.getPassword();
     }
-
 
     public long getId() {
         return id;
